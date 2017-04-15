@@ -13,21 +13,64 @@
 
             </div>
 
-            <div class="panel panel-default">
-
-                <div class="panel-heading">Objetivos</div>
                 <div class="panel panel-default">
 
-                    <div class="panel-heading">Usuarios</div>
+                    <div class="panel-heading">Misión</div>
 
                     <div class="panel-body">
 
                     </div>
 
                 </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Visión</div>
+
                 <div class="panel-body">
 
                 </div>
+
+            </div>
+
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Objetivos</div>
+
+                <div class="panel-body">
+
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Estrategias</div>
+
+                <div class="panel-body">
+
+                </div>
+
+            </div>
+
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Organigrama</div>
+
+                <div class="panel-body">
+
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
 
             </div>
 
