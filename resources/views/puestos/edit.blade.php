@@ -14,6 +14,14 @@
                    {!! Form::model($puestos, ['route' => ['puestos.update', $puestos->id], 'method' => 'patch']) !!}
 
                         @include('puestos.fields')
+                        @include('puestos.edit.depende_de_selector')
+
+
+                        <!-- Submit Field -->
+                        <div class="form-group col-sm-12">
+                            {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                            <a href="{!! route('puestos.index') !!}" class="btn btn-default">Cancel</a>
+                        </div>
 
                    {!! Form::close() !!}
                </div>

@@ -22,7 +22,8 @@ class Puestos extends Model
 
     public $fillable = [
         'nombre',
-        'descripcion'
+        'descripcion',
+        'depende_de'
     ];
 
     /**
@@ -47,6 +48,16 @@ class Puestos extends Model
     public function empleados()
     {
         return $this->hasMany('App\Models\Empleados', 'puesto_id');
+    }
+
+    public function dependeDe()
+    {
+        return $this->belongsTo('App\Models\Puestos', 'depende_de');
+    }
+
+    public function aCargoDe()
+    {
+        return $this->hasMany('App\Models\Puestos', 'depende_de');
     }
 
     

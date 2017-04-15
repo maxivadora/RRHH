@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+use App\Models\Puestos;
+
 class PuestosController extends Controller
 {
     /** @var  PuestosRepository */
@@ -43,7 +45,8 @@ class PuestosController extends Controller
      */
     public function create()
     {
-        return view('puestos.create');
+        $puestos = Puestos::all()->pluck('nombre','id');
+        return view('puestos.create')->with('puestos', $puestos);
     }
 
     /**
@@ -94,6 +97,7 @@ class PuestosController extends Controller
     public function edit($id)
     {
         $puestos = $this->puestosRepository->findWithoutFail($id);
+        $puestos_padres = Puestos::all()->pluck('nombre','id');
 
         if (empty($puestos)) {
             Flash::error('Puestos not found');
@@ -101,7 +105,9 @@ class PuestosController extends Controller
             return redirect(route('puestos.index'));
         }
 
-        return view('puestos.edit')->with('puestos', $puestos);
+        return view('puestos.edit')
+                ->with('puestos', $puestos)
+                ->with('puestos_padres', $puestos_padres);
     }
 
     /**
