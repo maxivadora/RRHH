@@ -35,9 +35,19 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+<!--                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
+ -->
+<!-- aca van los link del "menu" -->
+                @if (!Auth::guest())  <!-- con este metodo se cuando esta autenticado el usuario -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/empleados') }}">Empleados</a></li>
+                    </ul>
+                @endif 
+<!-- end -->
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -78,7 +88,9 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
