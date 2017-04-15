@@ -6,6 +6,7 @@
         <th>Legajo</th>
         <th>Telefono</th>
         <th>Direccion</th>
+        <th>Puesto de Trabajo</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
             <td>{!! $empleados->legajo !!}</td>
             <td>{!! $empleados->telefono !!}</td>
             <td>{!! $empleados->direccion !!}</td>
+            <td>{!! $empleados->puesto->nombre !!}</td>
             <td>
                 {!! Form::open(['route' => ['empleados.destroy', $empleados->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

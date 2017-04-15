@@ -17,7 +17,7 @@ class Empleados extends Model
     public $table = 'empleados';
     
 
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'fecha_nacimiento'];
 
 
     public $fillable = [
@@ -26,7 +26,8 @@ class Empleados extends Model
         'fecha_nacimiento',
         'legajo',
         'telefono',
-        'direccion'
+        'direccion',
+        'puesto_id'
     ];
 
     /**
@@ -51,6 +52,11 @@ class Empleados extends Model
     public static $rules = [
         
     ];
+
+    public function puesto()
+    {
+        return $this->belongsTo('App\Models\Puestos', 'puesto_id');
+    }
 
     
 }

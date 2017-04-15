@@ -40,6 +40,12 @@
     <p>{!! $empleados->direccion !!}</p>
 </div>
 
+<!-- Direccion Field -->
+<div class="form-group">
+    {!! Form::label('puesto', 'Puesto de Trabajo:') !!}
+    <p>{!! $empleados->puesto->nombre !!}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

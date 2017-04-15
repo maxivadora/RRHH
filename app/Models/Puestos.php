@@ -44,5 +44,10 @@ class Puestos extends Model
         
     ];
 
+    public function empleados()
+    {
+        return $this->hasMany('App\Models\Empleados', 'puesto_id');
+    }
+
     
 }

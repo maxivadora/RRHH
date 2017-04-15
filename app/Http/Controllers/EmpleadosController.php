@@ -11,6 +11,8 @@ use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
+use App\Models\Puestos;
+
 class EmpleadosController extends Controller
 {
     /** @var  EmpleadosRepository */
@@ -43,7 +45,8 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
-        return view('empleados.create');
+        $puestos = Puestos::all()->pluck('nombre','id');
+        return view('empleados.create')->with('puestos',$puestos);
     }
 
     /**
@@ -94,14 +97,18 @@ class EmpleadosController extends Controller
     public function edit($id)
     {
         $empleados = $this->empleadosRepository->findWithoutFail($id);
+        $puestos = Puestos::all()->pluck('nombre','id');
+
 
         if (empty($empleados)) {
-            Flash::error('Empleados not found');
+            Flash::error('Empleado not found');
 
             return redirect(route('empleados.index'));
         }
 
-        return view('empleados.edit')->with('empleados', $empleados);
+        return view('empleados.edit')
+                ->with('empleados', $empleados)
+                ->with('puestos',$puestos);
     }
 
     /**

@@ -14,7 +14,15 @@
                    {!! Form::model($empleados, ['route' => ['empleados.update', $empleados->id], 'method' => 'patch']) !!}
 
                         @include('empleados.fields')
+                        @include('empleados.edit.fecha_nacimiento_selector')
+                        @include('empleados.edit.puestos_selector')
 
+                        
+                        <!-- Submit Field -->
+                        <div class="form-group col-sm-12">
+                            {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                            <a href="{!! route('empleados.index') !!}" class="btn btn-default">Cancel</a>
+                        </div>
                    {!! Form::close() !!}
                </div>
            </div>
