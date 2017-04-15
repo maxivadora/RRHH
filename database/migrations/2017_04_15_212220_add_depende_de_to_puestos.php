@@ -14,7 +14,7 @@ class AddDependeDeToPuestos extends Migration
     public function up()
     {
         Schema::table('puestos', function (Blueprint $table) {
-            $table->integer('depende_de')->nullable()->unsigned();
+            $table->integer('depende_de')->nullable()->unsigned()->default('1');
             $table->foreign('depende_de')->references('id')->on('puestos')->onDelete('cascade');;
         });
     }
