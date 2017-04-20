@@ -34,11 +34,6 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
-<!--                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
- -->
 <!-- aca van los link del "menu" -->
                 @if (!Auth::guest())  <!-- con este metodo se cuando esta autenticado el usuario -->
                     <ul class="nav navbar-nav">
@@ -93,8 +88,8 @@
             @yield('content')
         </div>
     </div>
-
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    @yield('script')
 </body>
 </html>
