@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index');
 Route::resource('empleados', 'EmpleadosController');
 
 Route::resource('puestos', 'PuestosController');
+
+Route::get('/organigrama', 'OrganigramasController@index');

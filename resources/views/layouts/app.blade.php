@@ -40,6 +40,7 @@
                         <li><a href="{{ url('/home') }}">Home</a></li>
                         <li><a href="{{ url('/empleados') }}">Empleados</a></li>
                         <li><a href="{{ url('/puestos') }}">Puestos de Trabajo</a></li>
+                        <li><a href="{{ url('/organigrama') }}">Organigrama</a></li>
                     </ul>
                 @endif 
 <!-- end -->
