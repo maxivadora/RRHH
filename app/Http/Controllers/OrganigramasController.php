@@ -8,6 +8,6 @@ class OrganigramasController extends Controller
 {
 	public function index()
     {
-     return view('organigramas.index');
+    	return view('organigramas.index');
     }
 }
