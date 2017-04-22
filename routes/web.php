@@ -29,12 +29,6 @@ Route::get('/organigrama', 'OrganigramasController@index');
 
 Route::get('/initData', function(){
 	$puestos = Puestos::all();
-        // foreach ($puestos as $puesto) {
-        //     $puesto->empleados;
-        //     foreach ($puesto->aCargoDe as $acargode){
-        //         $acargode->empleados;
-        //     }//por el momento esto anda..... busca los puestos y los empleados de sus puestos.
-        // }
         return response()->json($puestos);
 });
 
