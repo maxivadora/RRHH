@@ -3,6 +3,7 @@
 @section('content')
     <h1>Organigrama</h1>
     <div id="chart-container"></div>
+    <div id="infoPuesto"></div>
 @endsection
 
 @section('script')
@@ -39,7 +40,23 @@
                 'data' : datasource,
                 'depth': 3,
                 'nodeTitle': 'nombre',
-                'nodeId': 'id'
+                'nodeId': 'id',
+                'createNode': function($node, data) {
+                    $node.on('click', function(){
+                        $.get('/'+ data.id +'/empleados', function(response){
+                            $('#infoPuesto').empty();
+                            var title = "<h3>Empleados del Departamento "+ data.nombre +"</h3>"
+                            $('#infoPuesto').prepend(title);
+                            for (var i = 0; i < response.length; i++) {
+                                var linkShow = $('<a/>', {
+                                    'href': '/empleados/'+response[i].id
+                                })
+                                var empleado = "<li>"+ response[i].apellido+" , "+ response[i].nombre +"</li>"
+                                $('#infoPuesto').append(linkShow.append(empleado))
+                            }
+                        })
+                    })
+                }
             });
         });
 

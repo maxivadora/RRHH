@@ -37,3 +37,8 @@ Route::get('/initData', function(){
         // }
         return response()->json($puestos);
 });
+
+Route::get('/{id}/empleados', function($id){
+	$puesto = App\Models\Puestos::find($id);
+	return response()->json($puesto->empleados);
+});
